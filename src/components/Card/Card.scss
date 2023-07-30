@@ -1,0 +1,85 @@
+@import "../../main.scss";
+
+.card {
+  background-color: $bg-main;
+  border-radius: 1.2rem;
+  min-width: 32.1rem;
+  width: 100%;
+  font-family: $font-main;
+  padding: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &:nth-child(2) {
+    margin-inline: 2rem;
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+
+    align-items: center;
+
+    img {
+      height: 3.6rem;
+      width: 3.6rem;
+      object-fit: contain;
+    }
+
+    div {
+      display: flex;
+      align-items: center;
+      color: rgba(190, 192, 202, 1);
+
+      p {
+        margin-right: 0.7rem;
+      }
+
+      svg {
+        height: 0.6rem;
+        width: 0.8rem;
+      }
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    margin-top: 3rem;
+
+    &--item {
+      display: flex;
+      flex-direction: column;
+
+      &:not(:last-child) {
+        margin-right: 6.5rem;
+      }
+
+      &-heading {
+        color: #8b8d97;
+        font-size: $text-sm;
+      }
+
+      &-content {
+        font-size: $text-lg;
+        align-items: center;
+        display: flex;
+        align-items: center;
+      }
+
+      span {
+        color: $color-green-1;
+        font-size: 1rem;
+        margin-left: 0.8rem;
+      }
+    }
+  }
+}
+
+.card-abandoned {
+  margin: 2rem 0 0 0 !important;
+}
+
+.title-abandoned {
+  color: $color-red-1;
+}

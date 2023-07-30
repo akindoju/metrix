@@ -1,0 +1,130 @@
+@import "../../main.scss";
+
+.dashboard {
+  background-color: $bg-shade;
+  padding: 2rem;
+
+  &__card {
+    display: flex;
+    justify-content: space-between;
+    overflow-x: scroll;
+  }
+
+  &__heading {
+    font-size: $text-md;
+  }
+
+  &__marketting {
+    &--stats {
+      display: flex;
+      flex-direction: column;
+      background-color: $bg-main;
+      border-radius: 1.2rem;
+      width: 100%;
+      font-family: $font-main;
+      padding: 1.2rem;
+      margin-block: 2rem;
+
+      &-bullets {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 1rem;
+
+        &-1,
+        &-2,
+        &-3 {
+          display: flex;
+          align-items: center;
+
+          div {
+            height: 0.8rem;
+            width: 0.8rem;
+            border-radius: 0.4rem;
+            margin-right: 1rem;
+          }
+
+          p {
+            color: rgba(190, 192, 202, 1);
+            font-size: 1rem;
+          }
+        }
+
+        &-1 {
+          div {
+            background-color: $color-blue-1;
+          }
+        }
+
+        &-2 {
+          div {
+            background-color: $color-blue-2;
+          }
+        }
+
+        &-3 {
+          div {
+            background-color: $color-orange-1;
+          }
+        }
+      }
+
+      &-chart {
+        margin-inline: auto;
+        margin-block: 2.5rem;
+      }
+    }
+
+    &--cards {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &__summary {
+    display: flex;
+    flex-direction: column;
+    background-color: $bg-main;
+    border-radius: 1.2rem;
+    width: 100%;
+    font-family: $font-main;
+    padding: 1.2rem;
+    margin-block: 2rem;
+
+    &--top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 2.5rem;
+
+      &-left {
+        display: flex;
+        align-items: center;
+
+        &-sales {
+          display: flex;
+          align-items: center;
+          margin-left: 1.4rem;
+          padding: 0.5rem 1.4rem;
+          background-color: #5570f114;
+          color: $color-blue-1;
+          font-size: $text-sm;
+          border-radius: 0.8rem;
+
+          p {
+            margin-right: 1rem;
+          }
+        }
+      }
+
+      &-dropdown {
+        display: flex;
+        align-items: center;
+        font-size: $text-sm;
+
+        p {
+          margin-right: 1rem;
+        }
+      }
+    }
+  }
+}

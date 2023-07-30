@@ -1,0 +1,197 @@
+@import "../../main.scss";
+
+.sidebar {
+  background-color: $bg-main;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  height: 100vh;
+  max-width: 40rem;
+  width: 70%;
+  box-shadow: 0.8rem 0 3rem rgba(0, 0, 0, 0.04);
+  overflow-y: auto;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  scrollbar-width: 5px;
+  transition: all 0.5s;
+
+  &__logo {
+    display: none;
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 1.2rem 1rem 0.7rem;
+
+    &--dropdown {
+      display: flex;
+      align-items: center;
+      background-color: $color-orange-2;
+      padding: 0.6rem 1rem;
+      border-radius: 0.8rem;
+      margin-right: 1rem;
+
+      p {
+        font-family: $font-main;
+        font-size: 12;
+      }
+
+      svg {
+        margin-left: 0.5rem;
+      }
+    }
+
+    &--right {
+      display: flex;
+      align-items: center;
+
+      &-notification {
+        height: 3rem;
+        width: 3rem;
+      }
+
+      &-profile {
+        height: 4rem;
+        width: 4rem;
+        object-fit: contain;
+        margin-left: 1rem;
+      }
+    }
+  }
+
+  &__main {
+    padding-inline: 2.5rem;
+
+    &--pages {
+      margin-block: 4rem 6rem;
+
+      &-page {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1rem;
+        transition: 0.5s all;
+        padding: 1.2rem 1rem;
+        border-radius: 1.2rem;
+
+        svg {
+          height: 2.5rem;
+          width: 2.5rem;
+          margin-right: 1rem;
+        }
+
+        p {
+          font-size: $text-md;
+          font-family: $font-main;
+          color: rgba(83, 84, 92, 1);
+        }
+
+        div {
+          height: 2.4rem;
+          width: 2.4rem;
+          border-radius: 1.2rem;
+          background-color: $color-orange-1;
+          font-family: $font-main;
+          font-size: $text-md;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-left: 1.3rem;
+        }
+
+        &-active {
+          background-color: $color-blue-1;
+
+          p {
+            color: white;
+          }
+
+          svg {
+            fill: white;
+            stroke: none;
+          }
+
+          path {
+            stroke: none;
+          }
+        }
+      }
+    }
+
+    &--options {
+      &-option {
+        display: flex;
+        align-items: center;
+        border-radius: 1.2rem;
+        color: rgba(83, 84, 92, 1);
+
+        &-1,
+        &-2 {
+          svg {
+            margin-right: 1rem;
+          }
+
+          p {
+            font-family: $font-main;
+            font-size: $text-sm;
+          }
+        }
+
+        &-1 {
+          background-color: rgba(94, 99, 102, 0.1);
+          padding: 1rem;
+        }
+
+        &-2 {
+          background-color: $color-orange-3;
+          margin-block: 1.2rem 2rem;
+          display: flex;
+          flex-direction: column;
+          color: rgba(83, 84, 92, 1);
+
+          &-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            align-self: flex-start;
+            padding: 1rem 1rem 1rem 0.7rem;
+
+            svg {
+              margin-right: 1.3rem;
+            }
+          }
+
+          &-bottom {
+            padding: 1rem 1rem 1rem 1.2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            align-self: flex-start;
+
+            p {
+              font-size: 1rem;
+              margin-right: 1.5rem;
+            }
+          }
+        }
+      }
+
+      &-logout {
+        display: flex;
+        align-items: center;
+        padding: 1rem;
+
+        svg {
+          margin-right: 0.7rem;
+        }
+
+        p {
+          font-size: $text-sm;
+          font-family: $font-main;
+          color: $color-red-1;
+        }
+      }
+    }
+  }
+}

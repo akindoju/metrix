@@ -1,0 +1,18 @@
+@import "./main.scss";
+
+.logo {
+  display: flex;
+  align-items: center;
+
+  svg {
+    height: 5.2rem;
+    width: 5.2rem;
+    transform: translateY(-0.3rem);
+  }
+
+  p {
+    font-size: $text-lg;
+    font-family: $font-sub;
+    font-weight: 700;
+  }
+}
