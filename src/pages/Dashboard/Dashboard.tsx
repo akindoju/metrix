@@ -1,7 +1,7 @@
 import { FC } from "react";
 import "./Dashboard.scss";
 import { Card } from "../../components/Card/Card";
-import { cardData1, cardData2 } from "../../data/data";
+import { cardData1, cardData2, recentOrders } from "../../data/data";
 import graphBar from "../../assets/graphBar.png";
 
 export const Dashboard: FC = () => {
@@ -161,6 +161,39 @@ export const Dashboard: FC = () => {
         </div>
 
         <img src={graphBar} alt="Graph Bar" />
+      </div>
+
+      <div className="dashboard__recent">
+        <p className="dashboard__heading">Recent Orders</p>
+
+        {recentOrders.map((order, idx) => {
+          return (
+            <div className="dashboard__recent--order" key={order.status + idx}>
+              <img src={order.image} alt="Order Image" />
+
+              <div className="dashboard__recent--order-text">
+                <div className="dashboard__recent--order-text-top">
+                  <p className="dashboard__recent--order-text-top-phone">
+                    iPhone 13
+                  </p>
+                  <p className="dashboard__recent--order-text-top-date">
+                    12 Sept 2022
+                  </p>
+                </div>
+
+                <div className="dashboard__recent--order-text-bottom">
+                  <p className="dashboard__recent--order-text-bottom-price">
+                    ₦730,000.00 x 1
+                  </p>
+
+                  <div className={order.status}>
+                    <p>{order.status}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          );
+        })}
       </div>
     </div>
   );

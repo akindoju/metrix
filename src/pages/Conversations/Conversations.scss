@@ -1,1 +1,158 @@
 @import "../../App.scss";
+
+.conversations {
+  background-color: $bg-shade;
+  padding: 2rem;
+  font-family: $font-main;
+
+  &__new {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+
+    p {
+      font-size: $text-sm;
+    }
+
+    button {
+      background-color: $color-blue-1;
+      color: white;
+      border-radius: 0.8rem;
+      padding: 0.8rem 1.8rem;
+      border: none;
+    }
+  }
+
+  &__messages {
+    background-color: $bg-main;
+    border-radius: 1.2rem;
+    padding-block: 2rem;
+
+    &--heading {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-family: $font-sub;
+      font-size: $text-md;
+      margin: 0 2rem 1rem 2rem;
+
+      &-count {
+        color: #a6a8b1;
+      }
+    }
+
+    &--search {
+      display: flex;
+      align-items: center;
+      border-radius: 0.8rem;
+      border: 1px solid #cfd3d4;
+      padding-inline: 1.5rem;
+      margin: 0 2rem 2rem 2rem;
+
+      input {
+        width: 100%;
+        padding-block: 0.8rem;
+        border: none;
+        outline: none;
+        margin-left: 1rem;
+        font-size: $text-sm;
+
+        &::placeholder {
+          color: #abafb1;
+        }
+      }
+    }
+
+    &--message {
+      display: flex;
+      align-items: center;
+      margin-top: 1.2rem;
+      padding: 0 2rem 1rem 2rem;
+
+      &:last-child {
+        padding-bottom: 0;
+      }
+
+      &:not(:last-child) {
+        border-bottom: 1px solid $bg-shade;
+      }
+
+      &-image {
+        position: relative;
+
+        img {
+          height: 4.9rem;
+          width: 4.9rem;
+          object-fit: contain;
+          margin-right: 1rem;
+        }
+
+        div {
+          position: absolute;
+          top: 0;
+          right: 0;
+          height: 1.2rem;
+          width: 1.2rem;
+          border-radius: 0.6rem;
+          border: 1.5px solid white;
+        }
+      }
+
+      &-text {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin-left: 1.2rem;
+        height: 4.9rem;
+        justify-content: space-between;
+        font-family: $font-main;
+
+        &-top {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          &-name {
+            font-size: $text-md;
+          }
+        }
+
+        &-bottom {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          color: #8b8d97;
+        }
+      }
+    }
+  }
+}
+
+.new-msg {
+  background-color: $color-orange-3;
+  padding: 0.2rem 0.6rem;
+  border-radius: 0.8rem;
+  font-family: $font-main;
+  color: #1c1d22;
+}
+
+.unread-msg {
+  height: 2rem;
+  width: 2rem;
+  border-radius: 1rem;
+  background-color: $color-orange-1;
+  font-family: $font-main;
+  font-size: $text-sm;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.user-active {
+  background-color: $color-blue-1;
+}
+
+.user-inactive {
+  background-color: $color-blue-2;
+}

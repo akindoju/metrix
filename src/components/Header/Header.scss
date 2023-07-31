@@ -13,13 +13,13 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1rem 1.2rem 0.3rem 0.7rem;
+    padding: 1rem 2rem 0.3rem 1.3rem;
     border-bottom: 1px solid $bg-shade;
   }
 
   &__sub {
     display: flex;
-    margin-left: 1.2rem;
+    margin-left: 2rem;
     margin-block: 0.4rem;
     color: rgba(139, 141, 151, 1);
     font-family: $font-main;

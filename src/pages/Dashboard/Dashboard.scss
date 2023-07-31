@@ -127,4 +127,77 @@
       }
     }
   }
+
+  &__recent {
+    display: flex;
+    flex-direction: column;
+    background-color: $bg-main;
+    border-radius: 1.2rem;
+    font-family: $font-main;
+    padding: 1.2rem;
+
+    &--order {
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid $bg-shade;
+      padding-bottom: 1rem;
+      margin-top: 1.2rem;
+
+      img {
+        height: 4.9rem;
+        width: 4.9rem;
+        object-fit: contain;
+      }
+
+      &-text {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin-left: 1.2rem;
+        height: 4.9rem;
+        justify-content: space-between;
+        font-family: $font-main;
+
+        &-top {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          &-phone {
+            font-size: $text-md;
+          }
+
+          &-date {
+            font-size: 1.1rem;
+            color: #a6a8b1;
+          }
+        }
+
+        &-bottom {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          &-price {
+            font-size: $text-sm;
+          }
+
+          div {
+            padding: 0.3rem 0.9rem;
+            border-radius: 0.8rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+.Pending {
+  background-color: $color-red-2;
+  color: $color-red-1;
+}
+
+.Completed {
+  background-color: $color-green-2;
+  color: $color-green-1;
 }
