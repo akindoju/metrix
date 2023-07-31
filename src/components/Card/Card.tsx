@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useState } from "react";
 import "./Card.scss";
 
 export const Card: FC<{
@@ -22,9 +22,17 @@ export const Card: FC<{
   bonus1,
   bonus2,
 }) => {
+  // const [active, setActive] = useState<string>("All Products");
+
   return (
     <div
-      className={heading1 === "Abandoned Cart" ? "card card-abandoned" : "card"}
+      className={
+        heading1 === "Abandoned Cart"
+          ? "card card-abandoned"
+          : heading1 === "All Orders"
+          ? "card card-orders"
+          : "card"
+      }
     >
       <div className="card__top">
         <img src={icon} alt="Section icon" />
@@ -42,7 +50,6 @@ export const Card: FC<{
             >
               <path
                 d="M1 1.5L6 6.5L11 1.5"
-                stroke="#BEC0CA"
                 strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"

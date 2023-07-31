@@ -151,7 +151,7 @@ export const Conversation: FC<{
 
         <div className="conversation__body--right">
           <div className="conversation__body--right-message">
-            <p>Hello {user.name}, thank you for reaching out</p>
+            <p>Hello {user.name.split(" ")[0]}, thank you for reaching out</p>
           </div>
 
           <div className="conversation__body--right-time">

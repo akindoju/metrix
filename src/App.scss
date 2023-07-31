@@ -1,5 +1,26 @@
 @import "./main.scss";
 
+.app {
+  height: 100vh;
+
+  @media (min-width: 850px) {
+    overflow: hidden;
+    display: flex;
+  }
+}
+
+.wrapper {
+  @media (min-width: 850px) {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.container {
+  max-width: 1440px;
+  align-self: center;
+}
+
 .logo {
   display: flex;
   align-items: center;
@@ -14,5 +35,6 @@
     font-size: $text-lg;
     font-family: $font-sub;
     font-weight: 700;
+    color: #45464e;
   }
 }

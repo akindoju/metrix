@@ -1,13 +1,22 @@
 @import "../../App.scss";
 
 .conversation {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 100vh;
   background: $bg-main;
+  z-index: 99;
+
+  @media (max-width: 1200px) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  @media (min-width: 1200px) {
+    margin-left: 2rem;
+    border-radius: 1.2rem;
+    flex: 1;
+  }
 
   &__header {
     display: flex;
@@ -21,12 +30,16 @@
       height: 2.4rem;
       width: 2.4rem;
       fill: $color-blue-1;
+      margin-right: 1rem;
+
+      @media (min-width: 1200px) {
+        display: none;
+      }
     }
 
     img {
       height: 5rem;
       width: 5rem;
-      margin-left: 1rem;
     }
 
     &--text {
@@ -136,6 +149,7 @@
 
     &--left {
       align-self: flex-start;
+      max-width: 30rem;
 
       &-quoted {
         display: flex;
@@ -183,6 +197,9 @@
       }
 
       &-message {
+        align-self: flex-start;
+        max-width: 30rem;
+
         div {
           background-color: $color-blue-1;
           border-radius: 1.2rem 1.2rem 1.2rem 0;
@@ -209,6 +226,7 @@
         color: #1c1d22;
         font-size: $text-sm;
         margin-block: 1rem 0.5rem;
+        max-width: 35rem;
       }
 
       &-time {
@@ -233,13 +251,28 @@
       display: flex;
       border: 1px solid #cfd3d4;
       align-items: center;
-      width: 90%;
-      bottom: 0;
-      position: absolute;
-      margin-bottom: 2rem;
+      width: 100%;
+      margin-top: 5rem;
       border-radius: 0.8rem;
       justify-content: space-between;
       padding-inline: 0.8rem;
+
+      @media (min-width: 1200px) {
+        margin-top: 2rem;
+      }
+
+      &-file {
+        cursor: pointer;
+
+        &:focus,
+        &:hover {
+          opacity: 0.7;
+        }
+
+        &:active {
+          transform: scale(0.98);
+        }
+      }
 
       input {
         width: 100%;
@@ -256,6 +289,16 @@
 
       &-emoji {
         margin-inline: 1rem;
+        cursor: pointer;
+
+        &:focus,
+        &:hover {
+          opacity: 0.7;
+        }
+
+        &:active {
+          transform: scale(0.98);
+        }
       }
 
       &-send {
@@ -266,6 +309,16 @@
         background-color: $color-orange-2;
         padding: 0.3rem 1rem;
         border-radius: 0.6rem;
+        cursor: pointer;
+
+        &:focus,
+        &:hover {
+          opacity: 0.7;
+        }
+
+        &:active {
+          transform: scale(0.98);
+        }
 
         p {
           margin-right: 0.5rem;

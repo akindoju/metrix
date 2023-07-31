@@ -4,6 +4,21 @@
   background-color: $bg-shade;
   padding: 2rem;
   font-family: $font-main;
+  position: relative;
+  height: 100vh;
+
+  @media (min-width: 850px) {
+    width: calc(100vw - 29rem);
+  }
+
+  @media (max-width: 1300px) {
+    overflow-y: scroll;
+  }
+
+  @media (min-width: 1200px) {
+    display: flex;
+    flex-direction: column;
+  }
 
   &__new {
     display: flex;
@@ -35,105 +50,123 @@
     }
   }
 
-  &__messages {
-    background-color: $bg-main;
-    border-radius: 1.2rem;
-    padding-block: 2rem;
+  &__main {
+    height: 100%;
 
-    &--heading {
+    @media (min-width: 1200px) {
       display: flex;
-      align-items: center;
-      justify-content: space-between;
-      font-family: $font-sub;
-      font-size: $text-md;
-      margin: 0 2rem 1rem 2rem;
-
-      &-count {
-        color: #a6a8b1;
-      }
     }
 
-    &--search {
-      display: flex;
-      align-items: center;
-      border-radius: 0.8rem;
-      border: 1px solid #cfd3d4;
-      padding-inline: 1.5rem;
-      margin: 0 2rem 2rem 2rem;
+    &--messages {
+      background-color: $bg-main;
+      border-radius: 1.2rem;
+      padding-block: 2rem;
+      padding-bottom: 12rem;
 
-      input {
-        width: 100%;
-        padding-block: 0.8rem;
-        border: none;
-        outline: none;
-        margin-left: 1rem;
-        font-size: $text-sm;
-
-        &::placeholder {
-          color: #abafb1;
-        }
-      }
-    }
-
-    &--message {
-      display: flex;
-      align-items: center;
-      margin-top: 1.2rem;
-      padding: 0 2rem 1rem 2rem;
-
-      &:last-child {
-        padding-bottom: 0;
-      }
-
-      &:not(:last-child) {
-        border-bottom: 1px solid $bg-shade;
-      }
-
-      &-image {
-        position: relative;
-
-        img {
-          height: 4.9rem;
-          width: 4.9rem;
-          object-fit: contain;
-          margin-right: 1rem;
-        }
-
-        div {
-          position: absolute;
-          top: 0;
-          right: 0;
-          height: 1.2rem;
-          width: 1.2rem;
-          border-radius: 0.6rem;
-          border: 1.5px solid white;
-        }
-      }
-
-      &-text {
+      &-heading {
         display: flex;
-        flex-direction: column;
-        width: 100%;
-        margin-left: 1.2rem;
-        height: 4.9rem;
+        align-items: center;
         justify-content: space-between;
-        font-family: $font-main;
+        font-family: $font-sub;
+        font-size: $text-md;
+        margin: 0 2rem 1rem 2rem;
 
-        &-top {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
+        &-count {
+          color: #a6a8b1;
+        }
+      }
 
-          &-name {
-            font-size: $text-md;
+      &-search {
+        display: flex;
+        align-items: center;
+        border-radius: 0.8rem;
+        border: 1px solid #cfd3d4;
+        padding-inline: 1.5rem;
+        margin: 0 2rem 2rem 2rem;
+
+        input {
+          width: 100%;
+          padding-block: 0.8rem;
+          border: none;
+          outline: none;
+          margin-left: 1rem;
+          font-size: $text-sm;
+
+          &::placeholder {
+            color: #abafb1;
+          }
+        }
+      }
+
+      &-message {
+        display: flex;
+        align-items: center;
+        padding: 1rem 2rem;
+        cursor: pointer;
+        transition: all 0.2s;
+        border-right: 3px solid transparent;
+
+        &:hover,
+        &:active,
+        &:focus {
+          background-color: #f7f7fc;
+          border-right: 3px solid $color-blue-1;
+        }
+
+        &:last-child {
+          padding-bottom: 0;
+        }
+
+        &:not(:last-child) {
+          border-bottom: 1px solid $bg-shade;
+        }
+
+        &-image {
+          position: relative;
+
+          img {
+            height: 4.9rem;
+            width: 4.9rem;
+            object-fit: contain;
+            margin-right: 1rem;
+          }
+
+          div {
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 1.2rem;
+            width: 1.2rem;
+            border-radius: 0.6rem;
+            border: 1.5px solid white;
           }
         }
 
-        &-bottom {
+        &-text {
           display: flex;
+          flex-direction: column;
+          width: 100%;
+          margin-left: 1.2rem;
+          height: 4.9rem;
           justify-content: space-between;
-          align-items: center;
-          color: #8b8d97;
+          font-family: $font-main;
+
+          &-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            &-name {
+              font-size: $text-md;
+            }
+          }
+
+          &-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #8b8d97;
+          }
         }
       }
     }
@@ -166,4 +199,25 @@
 
 .user-inactive {
   background-color: $color-blue-2;
+}
+
+.chat-overflow {
+  max-height: calc(100vh - 28rem) !important;
+  overflow-y: scroll;
+  height: 100%;
+}
+
+.main-container {
+  max-height: 65rem;
+}
+
+.msg-active {
+  background-color: #f7f7fc;
+  border-right: 3px solid $color-blue-1;
+}
+
+.coversations-minimized {
+  @media (min-width: 850px) {
+    width: calc(100vw - 10rem);
+  }
 }

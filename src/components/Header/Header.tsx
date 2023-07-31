@@ -18,7 +18,9 @@ export const Header: FC = () => {
   return (
     <div className="header">
       <div className="header__main">
-        <p className="page-title">Dashboard</p>
+        <p className="page-title">
+          {path !== "/conversations" ? "Dashboard" : "Conversations"}
+        </p>
 
         <div className="header__main--right">
           <div className="header__main--right-dropdown">

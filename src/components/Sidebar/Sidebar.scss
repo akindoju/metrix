@@ -2,22 +2,48 @@
 
 .sidebar {
   background-color: $bg-main;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  height: 100vh;
-  max-width: 40rem;
-  width: 70%;
+  max-width: 29rem;
   box-shadow: 0.8rem 0 3rem rgba(0, 0, 0, 0.04);
-  overflow-y: auto;
-  overflow-x: hidden;
-  scroll-behavior: smooth;
-  scrollbar-width: 5px;
   transition: all 0.5s;
   z-index: 999;
 
+  @media (max-width: 850px) {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+  }
+
+  @media (min-width: 850px) {
+    position: sticky;
+    display: flex;
+    flex-direction: column;
+    min-width: 29rem;
+    overflow-y: auto;
+    padding-bottom: 4rem;
+  }
+
   &__logo {
     display: none;
+    padding: 2rem;
+    color: #45464e;
+
+    @media (min-width: 850px) {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      &--sidebar {
+        height: 3rem !important;
+        width: 3rem !important;
+        cursor: pointer;
+        transition: all 0.2s;
+        fill: #45464e;
+      }
+
+      p {
+        font-size: $text-xl;
+      }
+    }
   }
 
   &__top {
@@ -25,6 +51,10 @@
     justify-content: space-between;
     align-items: center;
     padding: 1.5rem 1.2rem 1rem 0.7rem;
+
+    @media (min-width: 850px) {
+      display: none;
+    }
 
     &--dropdown {
       display: flex;
@@ -66,19 +96,38 @@
     padding-inline: 2.5rem;
 
     &--pages {
-      margin-block: 4rem 6rem;
+      margin-block: 4rem 18rem;
+
+      @media (min-width: 850px) {
+        margin-block: 4rem 26rem;
+      }
 
       &-page {
         display: flex;
         align-items: center;
-        margin-bottom: 1rem;
+        margin-top: 1.5rem;
         transition: 0.5s all;
         padding: 1.2rem 1rem;
         border-radius: 1.2rem;
+        cursor: pointer;
+        position: relative;
+
+        &:hover,
+        &:focus {
+          background-color: rgb(223, 223, 251);
+        }
+
+        &:active {
+          transform: scale(0.98);
+        }
+
+        @media (min-width: 850px) {
+          margin-bottom: 0;
+        }
 
         svg {
-          height: 2.5rem;
-          width: 2.5rem;
+          height: 2.4rem;
+          width: 2.4rem;
           margin-right: 1rem;
         }
 
@@ -116,6 +165,10 @@
           path {
             stroke: none;
           }
+
+          &:hover {
+            background-color: $color-blue-1;
+          }
         }
       }
     }
@@ -126,6 +179,17 @@
         align-items: center;
         border-radius: 1.2rem;
         color: rgba(83, 84, 92, 1);
+        cursor: pointer;
+        transition: all 0.2s;
+
+        &:focus,
+        &:hover {
+          opacity: 0.7;
+        }
+
+        &:active {
+          transform: scale(0.98);
+        }
 
         &-1,
         &-2 {
@@ -146,7 +210,7 @@
 
         &-2 {
           background-color: $color-orange-3;
-          margin-block: 1.2rem 2rem;
+          margin-block: 1.2rem 3rem;
           display: flex;
           flex-direction: column;
           color: rgba(83, 84, 92, 1);
@@ -173,6 +237,7 @@
             p {
               font-size: 1rem;
               margin-right: 1.5rem;
+              color: #6e7079;
             }
           }
         }
@@ -194,5 +259,70 @@
         }
       }
     }
+  }
+}
+
+.minimized {
+  min-width: 1rem;
+  transition: all 0.2s;
+
+  &__counter {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  .sidebar__main {
+    padding-inline: 2rem;
+  }
+
+  .sidebar__logo {
+    flex-direction: column;
+
+    p {
+      display: none;
+    }
+  }
+
+  .sidebar__main--pages-page {
+    padding-block: 1.2rem;
+    padding-left: 1.6rem;
+
+    p {
+      display: none;
+    }
+  }
+
+  .sidebar__main--options-option-1 {
+    padding-left: 1.6rem;
+
+    p {
+      display: none;
+    }
+  }
+
+  .sidebar__main--options-option-2 {
+    &-top {
+      svg {
+        margin-left: 1rem;
+        margin-right: 0;
+      }
+
+      p {
+        display: none;
+      }
+    }
+  }
+
+  .sidebar__main--options-logout {
+    padding-left: 2rem;
+
+    p {
+      display: none;
+    }
+  }
+
+  .sidebar__main--options-option-2-bottom {
+    display: none;
   }
 }
