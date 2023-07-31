@@ -14,6 +14,7 @@
   scroll-behavior: smooth;
   scrollbar-width: 5px;
   transition: all 0.5s;
+  z-index: 999;
 
   &__logo {
     display: none;

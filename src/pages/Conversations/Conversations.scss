@@ -21,6 +21,17 @@
       border-radius: 0.8rem;
       padding: 0.8rem 1.8rem;
       border: none;
+      transition: all 0.3s;
+      cursor: pointer;
+
+      &:hover,
+      &:focus {
+        opacity: 0.9;
+      }
+
+      &:active {
+        transform: scale(0.98);
+      }
     }
   }
 

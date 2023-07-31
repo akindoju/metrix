@@ -1,0 +1,281 @@
+@import "../../App.scss";
+
+.conversation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100vh;
+  background: $bg-main;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid $bg-shade;
+    padding: 2rem 2rem 1rem 2rem;
+    font-family: $font-main;
+    width: 100%;
+
+    &--go-back {
+      height: 2.4rem;
+      width: 2.4rem;
+      fill: $color-blue-1;
+    }
+
+    img {
+      height: 5rem;
+      width: 5rem;
+      margin-left: 1rem;
+    }
+
+    &--text {
+      display: flex;
+      flex-direction: column;
+      height: 4.5rem;
+      width: 100%;
+      margin-left: 1rem;
+      justify-content: space-between;
+
+      &-top,
+      &-bottom {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      &-top {
+        &-name {
+          font-size: $text-md;
+        }
+
+        &-right {
+          display: flex;
+          align-items: center;
+
+          div {
+            background-color: $color-orange-2;
+            padding: 0.2rem 0.8rem;
+            border-radius: 0.8rem;
+          }
+
+          button {
+            background-color: transparent;
+            border: none;
+            color: $color-blue-1;
+            margin-left: 1rem;
+            cursor: pointer;
+
+            &:hover,
+            &:focus {
+              opacity: 0.9;
+            }
+
+            &:active {
+              transform: scale(0.98);
+            }
+          }
+        }
+      }
+
+      &-bottom {
+        &-left {
+          display: flex;
+          align-items: center;
+
+          div {
+            height: 1rem;
+            width: 1rem;
+            border-radius: 0.5rem;
+            border: 1.5px solid white;
+            background-color: $color-blue-1;
+          }
+
+          &-online {
+            color: #b6bfe8;
+            margin-inline: 0.3rem 0.7rem;
+          }
+
+          &-time {
+            color: #8b8d97;
+          }
+        }
+
+        &-orders {
+          color: #8b8d97;
+          display: flex;
+          align-items: center;
+
+          svg {
+            height: 1.6rem;
+            width: 1.6rem;
+          }
+          p {
+            margin-left: 0.5rem;
+          }
+        }
+      }
+    }
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem 2rem 2rem 2rem;
+    align-items: center;
+    font-family: $font-main;
+    height: 100%;
+
+    &--date {
+      background-color: #f4f5fa;
+      padding: 0.5rem 1.2rem;
+      border-radius: 0.8rem;
+      color: #1c1d22;
+      margin-block: 1.5rem 2rem;
+    }
+
+    &--left {
+      align-self: flex-start;
+
+      &-quoted {
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid $bg-shade;
+        padding-bottom: 1rem;
+
+        img {
+          height: 4.9rem;
+          width: 4.9rem;
+          object-fit: contain;
+          margin-right: 1rem;
+        }
+
+        &-text {
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+          height: 4.9rem;
+          justify-content: space-between;
+          font-family: $font-main;
+
+          &-top {
+            font-size: $text-sm;
+          }
+
+          &-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            &-price {
+              font-size: $text-sm;
+            }
+
+            &-count {
+              font-size: 1rem;
+
+              span {
+                color: $color-blue-1;
+              }
+            }
+          }
+        }
+      }
+
+      &-message {
+        div {
+          background-color: $color-blue-1;
+          border-radius: 1.2rem 1.2rem 1.2rem 0;
+          padding: 1rem;
+          color: white;
+          font-size: $text-sm;
+          margin-block: 1rem 0.5rem;
+        }
+
+        &-time {
+          font-size: 1rem;
+          color: #8b8d97;
+        }
+      }
+    }
+
+    &--right {
+      align-self: flex-end;
+
+      &-message {
+        background-color: #ffead1;
+        border-radius: 1.2rem 1.2rem 0 1.2rem;
+        padding: 1rem;
+        color: #1c1d22;
+        font-size: $text-sm;
+        margin-block: 1rem 0.5rem;
+      }
+
+      &-time {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+
+        p {
+          font-size: 1rem;
+          color: #8b8d97;
+          margin-right: 0.7rem;
+        }
+
+        svg {
+          height: 1.4rem;
+          width: 1.4rem;
+        }
+      }
+    }
+
+    &--new-msg {
+      display: flex;
+      border: 1px solid #cfd3d4;
+      align-items: center;
+      width: 90%;
+      bottom: 0;
+      position: absolute;
+      margin-bottom: 2rem;
+      border-radius: 0.8rem;
+      justify-content: space-between;
+      padding-inline: 0.8rem;
+
+      input {
+        width: 100%;
+        padding-block: 0.8rem;
+        border: none;
+        outline: none;
+        margin-left: 1rem;
+        font-size: $text-sm;
+
+        &::placeholder {
+          color: #abafb1;
+        }
+      }
+
+      &-emoji {
+        margin-inline: 1rem;
+      }
+
+      &-send {
+        display: flex;
+        width: 9rem;
+        height: 2.4rem;
+        align-items: center;
+        background-color: $color-orange-2;
+        padding: 0.3rem 1rem;
+        border-radius: 0.6rem;
+
+        p {
+          margin-right: 0.5rem;
+        }
+
+        svg {
+          height: 1.5rem;
+          width: 1.5rem;
+        }
+      }
+    }
+  }
+}
