@@ -11,6 +11,7 @@
   justify-content: space-between;
   transition: all 0.2s;
   cursor: pointer;
+  min-width: 32.1rem;
 
   &:hover,
   &:focus,
@@ -20,10 +21,6 @@
 
   &:active {
     transform: scale(0.98);
-  }
-
-  @media (min-width: 1200px) {
-    min-width: 32.1rem;
   }
 
   &:nth-child(2) {

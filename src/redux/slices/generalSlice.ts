@@ -5,6 +5,7 @@ const initialState = {
   setIsConversationsCleared: false,
   width: window.innerWidth,
   isSidebarMinimized: false,
+  isMessageOpen: false,
 };
 
 const generalSlice = createSlice({
@@ -38,6 +39,13 @@ const generalSlice = createSlice({
         isSidebarMinimized: action.payload,
       };
     },
+
+    setIsMessageOpen: (state, action) => {
+      return {
+        ...state,
+        isMessageOpen: action.payload,
+      };
+    },
   },
 });
 
@@ -46,6 +54,7 @@ export const {
   setIsConversationsCleared,
   setWidth,
   setIsSidebarMinimized,
+  setIsMessageOpen,
 } = generalSlice.actions;
 
 export default generalSlice.reducer;

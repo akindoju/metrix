@@ -6,7 +6,7 @@ import { Conversations } from "./pages/Conversations/Conversations";
 import { useDispatch, useSelector } from "react-redux";
 import { Sidebar } from "./components/Sidebar/Sidebar";
 import { useEffect } from "react";
-import { setWidth } from "./redux/slices/generalSlice";
+import { setIsSidebarMinimized, setWidth } from "./redux/slices/generalSlice";
 
 function App() {
   const dispatch = useDispatch();
@@ -33,7 +33,11 @@ function App() {
     } else {
       document.body.style.overflow = "scroll";
     }
-  }, [isSidebarOpen, width]);
+
+    if (width < 850) {
+      dispatch(setIsSidebarMinimized(false));
+    }
+  }, [isSidebarOpen, width, dispatch]);
 
   return (
     <div className="app">

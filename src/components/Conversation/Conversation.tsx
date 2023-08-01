@@ -1,17 +1,20 @@
-import { FC, SetStateAction } from "react";
+import { FC } from "react";
 import "./Conversation.scss";
 import gold from "../../assets/gold.png";
 import jane from "../../assets/jane.png";
+import { useDispatch } from "react-redux";
+import { setIsMessageOpen } from "../../redux/slices/generalSlice";
 
 export const Conversation: FC<{
-  setIsMessageOpen: React.Dispatch<SetStateAction<boolean>>;
   user: {
     image: string;
     name: string;
     new: boolean;
     active: boolean;
   };
-}> = ({ setIsMessageOpen, user }) => {
+}> = ({ user }) => {
+  const dispatch = useDispatch();
+
   return (
     <div className="conversation">
       <div className="conversation__header">
@@ -21,7 +24,7 @@ export const Conversation: FC<{
           width="32"
           height="32"
           viewBox="0 0 32 32"
-          onClick={() => setIsMessageOpen(false)}
+          onClick={() => dispatch(setIsMessageOpen(false))}
           className="conversation__header--go-back"
         >
           <title>arrow-left2</title>

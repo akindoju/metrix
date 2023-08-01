@@ -2,17 +2,18 @@ import { FC, useState, useEffect } from "react";
 import "./Conversations.scss";
 import { conversations } from "../../data/data";
 import { Conversation } from "../../components/Conversation/Conversation";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { setIsMessageOpen } from "../../redux/slices/generalSlice";
 
 export const Conversations: FC = () => {
   const [active, setActive] = useState<string>("Jane Doe0");
-  const [isMessageOpen, setIsMessageOpen] = useState<boolean>(false);
   const [user, setUser] = useState<{
     image: string;
     name: string;
     new: boolean;
     active: boolean;
   }>({ image: "", name: "Jane Doe", new: false, active: false });
+  const dispatch = useDispatch();
 
   const width = useSelector(
     (state: { general: { width: number } }) => state.general.width
@@ -23,9 +24,14 @@ export const Conversations: FC = () => {
       state.general.isSidebarMinimized
   );
 
+  const isMessageOpen = useSelector(
+    (state: { general: { isMessageOpen: boolean } }) =>
+      state.general.isMessageOpen
+  );
+
   useEffect(() => {
     if (isMessageOpen && width < 1200) {
-      document.body.style.overflowY = "hidden";
+      document.body.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "scroll";
     }
@@ -38,6 +44,14 @@ export const Conversations: FC = () => {
           ? "coversations-minimized conversations"
           : "conversations"
       }
+      style={{
+        overflow:
+          width < 1200 && isMessageOpen
+            ? "hidden"
+            : width < 1400
+            ? "scroll"
+            : "hidden",
+      }}
     >
       <div className="conversations__new">
         <p>Conversations with Customers</p>
@@ -102,7 +116,7 @@ export const Conversations: FC = () => {
                         new: conversation.new,
                       });
                       setActive(conversation.name + idx);
-                      setIsMessageOpen(true);
+                      dispatch(setIsMessageOpen(true));
                     }}
                   >
                     <div className="conversations__main--messages-message-image">
@@ -149,9 +163,7 @@ export const Conversations: FC = () => {
             </div>
           </div>
 
-          {(isMessageOpen || width >= 1200) && (
-            <Conversation user={user} setIsMessageOpen={setIsMessageOpen} />
-          )}
+          {(isMessageOpen || width >= 1200) && <Conversation user={user} />}
         </div>
       </div>
     </div>
