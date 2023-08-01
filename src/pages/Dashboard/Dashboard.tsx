@@ -65,7 +65,7 @@ export const Dashboard: FC = () => {
                 </div>
 
                 <div className="dashboard__wrapper--left-marketting-stats-bullets">
-                  <div className="dashboard_wrapper--left-_marketting-stats-bullets-1">
+                  <div className="dashboard__wrapper--left-marketting-stats-bullets-1">
                     <div />
                     <p>Acquisition</p>
                   </div>

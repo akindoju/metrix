@@ -14,6 +14,8 @@
 }
 
 .wrapper {
+  background-color: $bg-shade;
+
   @media (min-width: 850px) {
     display: flex;
     flex-direction: column;
@@ -23,6 +25,8 @@
 .container {
   max-width: 1440px;
   align-self: center;
+  width: 100%;
+  padding: 0;
 }
 
 .logo {
