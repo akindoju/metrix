@@ -1,27 +1,35 @@
-# React + TypeScript + Vite
+Metrix - React + TypeScript + Vite Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Metrix is a web application created using Vite, TypeScript, and React that offers a robust and adaptable platform for data visualisation and analysis.
 
-Currently, two official plugins are available:
+Table of Contents:
+Getting Started
+Prerequisites
+Installation
+Usage
+Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Getting Started
+Follow the steps below to get Metrix up and running on your local machine.
 
-## Expanding the ESLint configuration
+Prerequisites
+Node.js (v14 or higher)
+npm (Node Package Manager)
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Installation
+Clone the repository:
 
-- Configure the top-level `parserOptions` property like this:
+git clone https://github.com/akindoju/metrix.git
+cd metrix
+Install the dependencies:
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
+npm install or yarn
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+Usage
+Start the development server:
+
+npm run dev or yarn dev
+The application should now be running at http://localhost:5173.
+
+Features
+Responsive Design, TypeScript Support, Fast and Efficient
