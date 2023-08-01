@@ -2,7 +2,10 @@ import { FC } from "react";
 import "./Header.scss";
 import profile from "../../assets/profile.png";
 import { useDispatch, useSelector } from "react-redux";
-import { setIsSidebarOpen } from "../../redux/slices/generalSlice";
+import {
+  setIsSidebarMinimized,
+  setIsSidebarOpen,
+} from "../../redux/slices/generalSlice";
 import { useLocation } from "react-router-dom";
 
 export const Header: FC = () => {
@@ -118,6 +121,7 @@ export const Header: FC = () => {
             className="header__mobile--menu"
             onClick={() => {
               dispatch(setIsSidebarOpen(true));
+              dispatch(setIsSidebarMinimized(false));
             }}
           >
             <title>menu</title>

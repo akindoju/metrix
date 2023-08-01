@@ -10,6 +10,17 @@
   flex-direction: column;
   justify-content: space-between;
   transition: all 0.2s;
+  cursor: pointer;
+
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: #e1e1f7;
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
 
   @media (min-width: 1200px) {
     min-width: 32.1rem;
@@ -120,6 +131,20 @@
   }
 }
 
-.card-products {
+.card-active {
   background-color: $color-blue-1;
+
+  .card__bottom--item {
+    p {
+      color: white;
+    }
+
+    span {
+      color: #dbdeee;
+    }
+  }
+
+  &:hover {
+    background-color: $color-blue-1;
+  }
 }

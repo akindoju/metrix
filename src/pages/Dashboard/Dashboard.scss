@@ -119,12 +119,6 @@
 
             & > div {
               height: 15.9rem;
-
-              &:hover,
-              &:focus,
-              &:active {
-                box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.1);
-              }
             }
           }
         }
@@ -165,9 +159,21 @@
               color: $color-blue-1;
               font-size: $text-sm;
               border-radius: 0.8rem;
+              cursor: pointer;
+              transition: all 0.2s;
 
               p {
                 margin-right: 1rem;
+              }
+
+              &:hover,
+              &:focus,
+              &:active {
+                opacity: 0.8;
+              }
+
+              &:active {
+                transform: scale(0.98);
               }
             }
           }
@@ -176,9 +182,28 @@
             display: flex;
             align-items: center;
             font-size: $text-sm;
+            cursor: pointer;
+
+            &:hover,
+            &:focus,
+            &:active {
+              color: $color-blue-2;
+
+              svg {
+                stroke: $color-blue-2;
+              }
+            }
+
+            &:active {
+              transform: scale(0.98);
+            }
 
             p {
               margin-right: 1rem;
+            }
+
+            svg {
+              stroke: black;
             }
           }
         }

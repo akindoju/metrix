@@ -4,7 +4,6 @@ import gold from "../../assets/gold.png";
 import jane from "../../assets/jane.png";
 
 export const Conversation: FC<{
-  isMessageOpen: boolean;
   setIsMessageOpen: React.Dispatch<SetStateAction<boolean>>;
   user: {
     image: string;
@@ -12,7 +11,7 @@ export const Conversation: FC<{
     new: boolean;
     active: boolean;
   };
-}> = ({ isMessageOpen, setIsMessageOpen, user }) => {
+}> = ({ setIsMessageOpen, user }) => {
   return (
     <div className="conversation">
       <div className="conversation__header">

@@ -2,9 +2,9 @@
 
 .app {
   height: 100vh;
+  overflow: hidden;
 
   @media (min-width: 850px) {
-    overflow: hidden;
     display: flex;
   }
 }

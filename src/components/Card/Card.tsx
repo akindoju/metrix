@@ -1,5 +1,6 @@
 import { FC, useState } from "react";
 import "./Card.scss";
+import lightInventory from "../../assets/lightInventory.png";
 
 export const Card: FC<{
   icon: string;
@@ -22,7 +23,7 @@ export const Card: FC<{
   bonus1,
   bonus2,
 }) => {
-  // const [active, setActive] = useState<string>("All Products");
+  const [active, setActive] = useState<string>("All Products");
 
   return (
     <div
@@ -31,11 +32,27 @@ export const Card: FC<{
           ? "card card-abandoned"
           : heading1 === "All Orders"
           ? "card card-orders"
+          : active === "All Products" && heading1 === "All Products"
+          ? "card-active card"
           : "card"
       }
+      onClick={() => {
+        if (active === "All Products" && heading1 === "All Products") {
+          setActive("");
+        } else if (active === "" && heading1 === "All Products") {
+          setActive("All Products");
+        }
+      }}
     >
       <div className="card__top">
-        <img src={icon} alt="Section icon" />
+        <img
+          src={
+            active === "All Products" && heading1 === "All Products"
+              ? lightInventory
+              : icon
+          }
+          alt="Section icon"
+        />
 
         {heading1 !== "All Products" && (
           <div>

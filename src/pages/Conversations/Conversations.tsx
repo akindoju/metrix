@@ -25,7 +25,7 @@ export const Conversations: FC = () => {
 
   useEffect(() => {
     if (isMessageOpen && width < 1200) {
-      document.body.style.overflow = "hidden";
+      document.body.style.overflowY = "hidden";
     } else {
       document.body.style.overflow = "scroll";
     }
@@ -150,11 +150,7 @@ export const Conversations: FC = () => {
           </div>
 
           {(isMessageOpen || width >= 1200) && (
-            <Conversation
-              user={user}
-              isMessageOpen={isMessageOpen}
-              setIsMessageOpen={setIsMessageOpen}
-            />
+            <Conversation user={user} setIsMessageOpen={setIsMessageOpen} />
           )}
         </div>
       </div>

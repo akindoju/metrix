@@ -24,7 +24,6 @@ export const Sidebar: FC = () => {
     (state: { general: { isSidebarMinimized: boolean } }) =>
       state.general.isSidebarMinimized
   );
-
   return (
     <div className={isSidebarMinimized ? "minimized sidebar" : "sidebar"}>
       <div className="logo sidebar__logo">
